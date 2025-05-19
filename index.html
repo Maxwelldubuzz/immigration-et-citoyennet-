@@ -149,6 +149,44 @@
   text-transform:uppercase;
   letter-spacing:0.5px;
 }
+/* ─────────────  AVIS FRAIS D’INSCRIPTION  ───────────── */
+
+.fee-alert{
+  /* Mise en page */
+  display:block;
+  margin:32px auto 16px;
+  max-width:560px;          /* ne déborde pas sur écrans larges */
+  padding:18px 22px;
+  text-align:center;
+  line-height:1.45;
+
+  /* Couleurs et contraste */
+  background:#faf6f6;       /* fond très clair pour ressortir */
+  border:3px solid #a61d2d; /* rouge “Canada” déjà présent sur le site */
+  border-radius:6px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+
+  /* Typo */
+  font-family:"Lato", Arial, sans-serif;
+  font-size:1.15rem;        /* lisible sans dominer le reste */
+  color:#222;
+  font-weight:600;
+}
+
+/* Accentuer la partie chiffrée */
+.fee-alert strong{
+  color:#a61d2d;
+  font-size:1.25rem;
+}
+
+/* Petite animation d’apparition (optionnelle) */
+@keyframes feeFade{
+  from{opacity:0; transform:translateY(8px);}
+  to  {opacity:1; transform:translateY(0);}
+}
+.fee-alert{
+  animation:feeFade .6s ease-out;
+}
   </style>
           <h1>Formulaire d'inscription</h1>
           <p><b>Bienvenue !</b> Merci de votre intérêt : ce formulaire en trois
@@ -264,6 +302,10 @@
 
                   required="" accept=".jpg,.jpeg,.png,.pdf" type="file"> </label>
               <div id="errorMessage3" style="color:red; font-weight:bold; margin-top:10px; display:none;"></div>
+              <!-- ★★  AVIS SUR LES FRAIS  ★★ -->
+<p class="fee-alert" role="alert">
+  Des droits d’inscription d’un montant de <strong>155&nbsp;$ CAD</strong> sont exigés pour le traitement de votre dossier ; ce montant est fixe et ne fait l’objet d’aucune négociation.
+</p>
               <div class="nav-btns"> <button type="button" id="prevBtn3">Précédent</button>
                 <button type="submit" id="submitBtn">Envoyer</button> </div>
             </div>
